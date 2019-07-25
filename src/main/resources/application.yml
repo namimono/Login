@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    #    hikari:
+    #      username: root
+    #      driver-class-name: com.mysql.jdbc.Driver
+    #      jdbc-url: jdbc:mysql:///db_ssh
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_ssh
+    username: root
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+  session:
+    store-type: none
+#security:
+#  basic:
+#    enabled: false
+server:
+  port: 8090
+security:
+  login:
+    code-size: 6
+    livetime: 60
+
