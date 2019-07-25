@@ -61,18 +61,20 @@ public class LoginController {
     @PostMapping("/mailLogin")
     public MyResult mailLogin(HttpServletRequest request, @RequestParam String code,@RequestParam String username){
         String validateCode = (String) request.getSession().getAttribute("validateCode");
-//        if (code.equals(validateCode)){
-//            System.out.println("验证码输入正确");
-//            return MyResult.getSuccess();
-//        }
-        try {
-            authService.mailLogin(username);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return MyResult.getFail();
+        if (code.equals(validateCode)){
+            System.out.println("验证码输入正确");
+            try {
+                authService.mailLogin(username);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return MyResult.getFail();
+            }
+
+            return MyResult.getSuccess();
+
         }
 
-        return MyResult.getSuccess();
+            return MyResult.getFail();
     }
 
 

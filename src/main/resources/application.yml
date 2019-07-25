@@ -11,6 +11,14 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
   session:
     store-type: none
+
+  mail:
+    default-encoding: utf-8
+    port: 25
+    host: smtp.qq.com
+    username: 1050657124@qq.com
+    password: ktmpwbsirrqjbdah
+
 #security:
 #  basic:
 #    enabled: false
@@ -20,4 +28,3 @@ security:
   login:
     code-size: 6
     livetime: 60
-
