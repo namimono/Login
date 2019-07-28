@@ -93,6 +93,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/v2/**").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/api-docs/**").permitAll()
+//                设置只需要登陆即可访问的url
+                .antMatchers("/hello/getCWithoutAuthority").authenticated()
 //                除了上述请求，拦截所有请求
                 .anyRequest().access("@rbacService.hasPermission(request,authentication)")
 //                .anyRequest().fullyAuthenticated()

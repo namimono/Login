@@ -62,4 +62,9 @@ public class HelloController {
 
         return "get B";
     }
+    @GetMapping("/getCWithoutAuthority")
+    public String getC(){
+
+        return "get B";
+    }
 }

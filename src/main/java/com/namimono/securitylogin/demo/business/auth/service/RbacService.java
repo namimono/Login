@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class RbacService {
-//使用AntPathMatcher适配url，由于restful风格的url会出现aa/*的情况。
+//使用AntPathMatcher适配url，由于restful风格的url会出现aa/{id}的情况。
     private AntPathMatcher antPathMatcher = new AntPathMatcher();
 
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
