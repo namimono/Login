@@ -4,20 +4,16 @@ import com.namimono.securitylogin.demo.config.utils.MyAnnotation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
-public class User {
+@Table(name = "user2")
+public class User2 {
 
     @Id
     @Column(name = "id")
@@ -36,18 +32,27 @@ public class User {
     @MyAnnotation(alias = "角色id")
     private Integer roleId;
 
-
     @Transient
-    @MyAnnotation(alias = "角色名称")
-    private String roleName;
+    @MyAnnotation(name = "角色列表",isIgnore = true)
+    private List<Role> roleList;
 
 
-    public User(String username, String password) {
+
+    public User2(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(String id) {
+    public User2(String id, String username, String password, Integer roleId) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.roleId = roleId;
+    }
+
+    public User2(String id) {
         this.id = id;
     }
+
+
 }

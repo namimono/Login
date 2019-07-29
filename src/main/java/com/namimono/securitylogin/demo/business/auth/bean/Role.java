@@ -1,5 +1,6 @@
 package com.namimono.securitylogin.demo.business.auth.bean;
 
+import com.namimono.securitylogin.demo.config.utils.MyAnnotation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,11 @@ public class Role implements GrantedAuthority {
      */
     @Id
     @Column(name = "id" )
+    @MyAnnotation(alias = "角色id")
     private String id;
 
     @Column(name = "name" )
+    @MyAnnotation(alias = "角色名称")
     private String name;
     @Override
     public String getAuthority() {

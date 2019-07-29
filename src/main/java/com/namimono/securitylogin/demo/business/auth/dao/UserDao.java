@@ -4,14 +4,14 @@ package com.namimono.securitylogin.demo.business.auth.dao;
 import com.namimono.securitylogin.demo.business.auth.bean.Authority;
 import com.namimono.securitylogin.demo.business.auth.bean.Role;
 import com.namimono.securitylogin.demo.business.auth.bean.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-@Mapper
-public interface UserDao {
+public interface UserDao extends Mapper<User> {
 
     @Select("select * from user where username=#{username}")
     public User getUserByName(String username);
@@ -26,4 +26,7 @@ public interface UserDao {
             "</foreach>" +
             "</script>")
     public List<Authority> getRoleAuthList(@Param("roleList")List<Role> roleList);
+
+    @Select("select role.name as roleName,u.* from user u left join role on u.role_id = role.id where username  = #{username}")
+    public User getUserWithRoleByName(String username);
 }
