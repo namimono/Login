@@ -8,7 +8,7 @@ import com.namimono.securitylogin.demo.business.auth.dao.UserDao;
 import com.namimono.securitylogin.demo.business.testA.bean.Dept;
 import com.namimono.securitylogin.demo.business.testA.dao.DeptDao;
 import com.namimono.securitylogin.demo.config.utils.ReflectUtils;
-import com.namimono.securitylogin.demo.config.utils.ReflectUtils2;
+import com.namimono.securitylogin.demo.config.utils.ReflectUtils3;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -98,7 +98,7 @@ public class DemoApplicationTests {
         Role role2=new Role("2","ROLE_VIP");
         roleList.add(role);
         roleList.add(role2);
-        User3 user = new User3("3","张三", "aaa",12,roleList,"部门经理，超级管理员","管理员",roleList);
+        User3 user = new User3("3","张三", "aaa",12,roleList,null,null,roleList);
 
         Role role3=new Role("1","AAAAAAAAAA");
         Role role4=new Role("2","BBBBBBBBBB");
@@ -106,7 +106,7 @@ public class DemoApplicationTests {
         roleList2.add(role4);
         User3 user2 = new User3("3","张三", "bbb",12,roleList2,"部门经理，超级管理员","管理员",roleList2);
 
-        String s = ReflectUtils2.packageModifyContent(user, user2);
+        String s = ReflectUtils3.packageModifyContent(user, user2);
         System.out.println(s);
     }
 }

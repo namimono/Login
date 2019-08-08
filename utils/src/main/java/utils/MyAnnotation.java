@@ -1,4 +1,4 @@
-package com.namimono.securitylogin.demo.config.utils;
+package utils;
 
 import java.lang.annotation.*;
 

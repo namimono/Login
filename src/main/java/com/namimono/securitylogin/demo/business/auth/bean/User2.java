@@ -32,9 +32,6 @@ public class User2 {
     @MyAnnotation(alias = "角色id")
     private Integer roleId;
 
-    @Transient
-    @MyAnnotation(name = "角色列表",isIgnore = true)
-    private List<Role> roleList;
 
 
 
@@ -43,12 +40,6 @@ public class User2 {
         this.password = password;
     }
 
-    public User2(String id, String username, String password, Integer roleId) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.roleId = roleId;
-    }
 
     public User2(String id) {
         this.id = id;

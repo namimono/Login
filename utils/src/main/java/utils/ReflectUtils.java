@@ -1,4 +1,4 @@
-package com.namimono.securitylogin.demo.config.utils;
+package utils;
 
 import org.springframework.util.StringUtils;
 
@@ -47,9 +47,9 @@ public class ReflectUtils {
 
             if(!sourceValue.equals(targetValue)) {
                 //获取自定义注解
-                content.append(annotation.alias() + "：<br/>");
-                content.append("&nbsp;&nbsp;&nbsp;&nbsp;原：" + sourceValue+ "<br/>");
-                content.append("&nbsp;&nbsp;&nbsp;&nbsp;改：" + targetValue+ "<hr/>");
+                content.append(annotation.alias() + "：");
+                content.append("原：" + sourceValue+" ");
+                content.append("改：" + targetValue+"\n");
             }
 
         }
@@ -86,10 +86,4 @@ public class ReflectUtils {
         }
         return fieldValue;
     }
-
-    /**
-     * @param source :原对象
-     * @param target :新修改的对象
-     * @return
-     */
 }

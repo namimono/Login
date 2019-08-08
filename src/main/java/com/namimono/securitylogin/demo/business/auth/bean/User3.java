@@ -32,11 +32,15 @@ public class User3 extends User2{
     @MyAnnotation(name = "角色" ,isUpdate = true)
     private List<Role> updateList;
 
+    @Transient
+    @MyAnnotation(name = "角色列表",isIgnore = true)
+    private List<Role> roleList;
 
     public User3(String id, String username, String password, Integer roleId, List<Role> roleList, String addInfo, String deleteInfo, List<Role> updateList) {
-        super(id, username, password, roleId, roleList);
+        super(id, username, password, roleId);
         this.addInfo = addInfo;
         this.deleteInfo = deleteInfo;
         this.updateList = updateList;
+        this.roleList=roleList;
     }
 }
