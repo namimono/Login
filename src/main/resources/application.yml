@@ -5,9 +5,9 @@ spring:
     #      driver-class-name: com.mysql.jdbc.Driver
     #      jdbc-url: jdbc:mysql:///db_ssh
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://114.55.100.241:3307/db_bookstore
+    url: jdbc:mysql:///db_ssh
     username: root
-    password: 123456
+    password:
     type: com.alibaba.druid.pool.DruidDataSource
   session:
     store-type: none

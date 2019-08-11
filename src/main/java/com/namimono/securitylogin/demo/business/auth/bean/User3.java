@@ -20,20 +20,20 @@ import java.util.List;
 public class User3 extends User2{
 
     @Transient
-    @MyAnnotation(name = "角色",isAdd = true)
+    @MyAnnotation(alias = "角色",isAdd = true)
     private String addInfo;
 
     @Transient
-    @MyAnnotation(name = "角色" ,isDelete = true)
+    @MyAnnotation(alias = "角色" ,isDelete = true)
     private String deleteInfo;
 
 
     @Transient
-    @MyAnnotation(name = "角色" ,isUpdate = true)
+    @MyAnnotation(alias = "角色" ,isUpdate = true)
     private List<Role> updateList;
 
     @Transient
-    @MyAnnotation(name = "角色列表",isIgnore = true)
+    @MyAnnotation(alias = "角色列表",isIgnore = true)
     private List<Role> roleList;
 
     public User3(String id, String username, String password, Integer roleId, List<Role> roleList, String addInfo, String deleteInfo, List<Role> updateList) {
